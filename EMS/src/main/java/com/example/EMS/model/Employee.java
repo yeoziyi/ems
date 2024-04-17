@@ -15,7 +15,7 @@ public class Employee {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    // Getters and setters
+
     public Long getId() {
         return id;
     }

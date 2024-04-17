@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long> {
-    // No need to implement these methods here
-    // Spring Data JPA will provide the implementation based on method signature
+
 }
