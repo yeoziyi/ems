@@ -45,7 +45,7 @@ Response: { "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." }
 ## Authentication
 Authentication is implemented using JSON Web Tokens (JWT). Follow these steps to authenticate:
 1. Register a new user:
-Endpoint: POST /api/auth/register
+Endpoint: POST /api/auth/signin
 Request Body: JSON object containing username and password.
 Example: { "username": "user", "password": "password" }
 
@@ -59,6 +59,8 @@ Response: JSON object containing access token.
 Include the access token in the Authorization header of your requests:
 Authorization: Bearer <access_token>
 
-4. curl -X GET http://localhost:8080/api/employees \
--H "Authorization: Bearer <access_token>"
+4. curl -u user:password http://localhost:8080/api/employees
+-u user:password: Specifies the username and password for basic authentication. Replace user with the actual username and password with the actual password.
+http://localhost:8080/api/employees: Specifies the URL to which the GET request is sent. This assumes that there is an endpoint at http://localhost:8080/api/employees that returns information about employees.
+When you run this curl command in your terminal or command prompt, it will send a GET request to the specified URL with the provided authentication credentials. If the authentication is successful and the endpoint exists, it will return the response from the server.
 
